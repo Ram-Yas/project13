@@ -13,11 +13,11 @@ public class Triangle extends Shape   {
         public void getArea(){
             double s = 0.5*(side1 + side2 + side3);
             area = Math.sqrt(s * (s - side1) * (s - side2) * (s - side3));
-            System.out.println("Area of Tringle : " + String.valueOf(area));
+            System.out.println("Area of Tringle : " + area);
         }
         public void getPeremeter(){
             peremeter = side3 + side2 + side1;
-            System.out.println("Peremeter of Tringle : "+ String.valueOf(peremeter));
+            System.out.println("Peremeter of Tringle : "+(peremeter));
         }
 
 }

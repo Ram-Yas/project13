@@ -11,11 +11,11 @@ package inheritance;
         }
         public void getArea(){
             area = width*height;
-            System.out.println("Area of Rectangle : " + String.valueOf(area));
+            System.out.println("Area of Rectangle : " + area);
         }
         public void getPeremeter(){
             peremeter = 2*(width + height);
-            System.out.println("Peremeter of Rectangle : "+ String.valueOf(peremeter));
+            System.out.println("Peremeter of Rectangle : "+ peremeter);
         }
     }
 

@@ -12,13 +12,13 @@ public class Square extends Shape{
     @Override
     void getArea() {
         area = side*side;
-        System.out.println("Area of square : "+String.valueOf(area));
+        System.out.println("Area of square : "+area);
     }
 
     @Override
     void getPeremeter() {
        peremeter = side*4;
-        System.out.println("Perimeter of Square is "+ String.valueOf(peremeter));
+        System.out.println("Perimeter of Square is "+ peremeter);
 
     }
 }
