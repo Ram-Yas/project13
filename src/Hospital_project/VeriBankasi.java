@@ -10,4 +10,6 @@ public class VeriBankasi {
     String[] durumlar = {"Allerji", "Bas agrisi", "Diabet", "Soguk alginligi", "Migren", "Kalp hastaliklari"};
     int[] hastaIDleri = {111, 222, 333, 444, 555, 666};
 
+    public VeriBankasi() {
+    }
 }

@@ -29,4 +29,7 @@ public class Doktor {
     public void setUnvan(String unvan) {
         this.unvan = unvan;
     }
+
+    public Doktor() {
+    }
 }

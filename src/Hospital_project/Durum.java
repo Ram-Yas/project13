@@ -20,4 +20,7 @@ public class Durum {
     public void setAciliyet(boolean aciliyet) {
         this.aciliyet = aciliyet;
     }
+
+    public Durum() {
+    }
 }
