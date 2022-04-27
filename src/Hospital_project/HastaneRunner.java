@@ -2,52 +2,48 @@ package Hospital_project;
 
 public class HastaneRunner {
 
-    private static Hastane Hastane1 = new Hastane();
+    private static Hastane hastane1 = new Hastane();
 
     public static void main(String[] args) {
 
-        String hastaDurumu;
+        String hastaDurumu="Soguk alginligi";
         String unvan;
-        //unvan = doktorUnvan(aktuelDurum); burada hata olusuyor
+
+        unvan = doktorUnvan(hastaDurumu);
+        hastane1.setDoktor(doktorBul(unvan));
+        //hastane1.setHasta(hastabul(hastaDurumuBul()));
+
+
+        System.out.println("doktor ismi :"+hastane1.getDoktor().getIsim());
+        System.out.println("doktor soyisim :"+hastane1.getDoktor().getSoyIsim());
+        System.out.println("doktor unvani : "+hastane1.getDoktor().getUnvan());
+        System.out.println("Hasta ismi :"+hastane1.getHasta().getIsim());
+        System.out.println("Hasta soyismi : "+hastane1.getHasta().getSoyIsim());
+        System.out.println("Hasta ID'si: "+ hastane1.getHasta().getHastaID());
+
     }
 
     public HastaneRunner() {
     }
 
+
     public static String doktorUnvan(String aktuelDurum) { // Hastane Runner 1. method
         if (aktuelDurum.equalsIgnoreCase("Allerji")) {
-            return "Allergist";
-            //return Hastane1.unvanlar[0]; hocanin ornekte bu sekilde
+            return hastane1.unvanlar[0]; //hocanin ornekte bu sekilde
         } else if (aktuelDurum.equalsIgnoreCase("Bas agrisi")) {
-            return "Norolog";
+            return   hastane1.unvanlar[1];
         } else if (aktuelDurum.equalsIgnoreCase("Diabet")) {
-            return "Genel cerrah";
+            return   hastane1.unvanlar[2];
         } else if (aktuelDurum.equalsIgnoreCase("Soguk alginligi")) {
-            return "Cocuk doktoru";
+            return hastane1.unvanlar[3];
         } else if (aktuelDurum.equalsIgnoreCase("migren")) {
-            return "Dahiliye";
+            return hastane1.unvanlar[4];
         } else if (aktuelDurum.equalsIgnoreCase("Kalp hastaliklari")) {
-            return "Kardiolog";
+            return hastane1.unvanlar[5];
         } else return "Yanlis unvan";
 
     }
 
-    public static Doktor doktorBul(String unvan) {  // Hastane Runner 2. method
-
-        Doktor doktor = new Doktor();
-
-
-        for (int i = 0; i <Hastane1.unvanlar.length; i++) {
-
-            if (unvan.equals(Hastane1.unvanlar[i])){
-                doktor.setIsim(Hastane1.doctorIsimleri[i]);
-                doktor.setSoyIsim(Hastane1.doctorIsimleri[i]);
-                doktor.setUnvan(unvan);
-            }
-
-        }
-        return doktor;
-    }
 
     public static Durum hastaDurumuBul(String aktuelDurum){  // Hastane Runner 3. method
 
@@ -71,14 +67,34 @@ public class HastaneRunner {
         return hastaDurumu;
     }
 
+    public static Doktor doktorBul(String unvan) {  // Hastane Runner 2. method
+
+        Doktor doktor = new Doktor();
+
+        for (int i = 0; i <hastane1.unvanlar.length; i++) {
+
+            if (unvan.equals(hastane1.unvanlar[i])){
+                doktor.setIsim(hastane1.doctorIsimleri[i]);
+                doktor.setSoyIsim(hastane1.doctorSoyIsimleri[i]);
+                doktor.setUnvan(unvan);
+            }
+
+        }
+        return doktor;
+    }
+
     public static Hasta hastabul(String actualCase){ // Hastane Runner 4. method
+
         Hasta hasta = new Hasta();
 
-       // for (int i = 0; i < ; i++) {
+        for (int i = 0; i <hastane1.durumlar.length ; i++) {
+            if (actualCase.equals(hastane1.durumlar[i])){
+                hasta.setIsim(hastane1.hastaIsimleri[i]);
+                hasta.setSoyIsim(hastane1.hastaSoyIsimleri[i]);
+                hasta.setHastaID(hastane1.hastaIDleri[i]);
+            }
 
-        //}
-
-
+        }
         return hasta;
     }
 }
