@@ -5,7 +5,7 @@ public class Hasta {
     private String isim;
     private String soyIsim;
     private int hastaID;
-    private Durum hastaDurumu;
+    private String[] hastaDurumu;
 
     public Hasta() {
     }
@@ -34,11 +34,11 @@ public class Hasta {
         this.hastaID = hastaID;
     }
 
-    public Durum getHastaDurumu() {
+    public String[] getHastaDurumu() {
         return hastaDurumu;
     }
 
-    public void setHastaDurumu(Durum hastaDurumu) {
+    public void setHastaDurumu(String[] hastaDurumu) {
         this.hastaDurumu = hastaDurumu;
     }
 }

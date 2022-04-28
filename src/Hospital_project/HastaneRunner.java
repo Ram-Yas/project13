@@ -11,12 +11,17 @@ public class HastaneRunner {
 
         unvan = doktorUnvan(hastaDurumu);
         hastane1.setDoktor(doktorBul(unvan));
-        //hastane1.setHasta(hastabul(hastaDurumuBul()));
+
 
 
         System.out.println("doktor ismi :"+hastane1.getDoktor().getIsim());
         System.out.println("doktor soyisim :"+hastane1.getDoktor().getSoyIsim());
         System.out.println("doktor unvani : "+hastane1.getDoktor().getUnvan());
+
+        String durumlar = "Migren";
+
+        hastane1.setHasta(hastabul(durumlar));
+
         System.out.println("Hasta ismi :"+hastane1.getHasta().getIsim());
         System.out.println("Hasta soyismi : "+hastane1.getHasta().getSoyIsim());
         System.out.println("Hasta ID'si: "+ hastane1.getHasta().getHastaID());
@@ -92,6 +97,7 @@ public class HastaneRunner {
                 hasta.setIsim(hastane1.hastaIsimleri[i]);
                 hasta.setSoyIsim(hastane1.hastaSoyIsimleri[i]);
                 hasta.setHastaID(hastane1.hastaIDleri[i]);
+
             }
 
         }
